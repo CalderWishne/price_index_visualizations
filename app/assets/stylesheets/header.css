@@ -1,0 +1,15 @@
+.header {
+	background-color: black;
+	color: white;
+	text-align: center;
+	padding: 12px;
+}
+
+h3 {
+	margin:0;
+}
+
+svg {
+	margin: 0 auto;
+	border: 1px solid black;
+}
