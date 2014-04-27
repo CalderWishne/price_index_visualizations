@@ -1,0 +1,13 @@
+.states {
+  fill: none;
+  stroke: black;
+  stroke-linejoin: round;
+}
+
+#choropleth_container {
+	border: none;
+/*	display:inline-block;
+	float: left;
+	width: 65%;*/
+}
+

@@ -4,7 +4,8 @@ function Choropleth() {
   var path = d3.geo.path();
  
   var svg = d3.select("body")
-    .append("svg");
+    .append("svg")
+    .attr("id", "choropleth_container");
 
   this.states = svg.append("g")
     .attr("class", "states");
@@ -19,12 +20,12 @@ function Choropleth() {
       .attr("id", function(d) { return d.properties.NAME.trimRight(); });
   });
 }
-Choropleth.prototype.colorStates = function(year, min_index, max_index, color) {
+Choropleth.prototype.colorStates = function(year, min_index, max_index, low_color, high_color) {
   color = typeof color !== 'undefined' ? color : "blue";
   var choro = this;
   var gradient = d3.scale.linear()
     .domain([min_index, max_index])
-    .range(["white", color]);
+    .range([low_color, high_color]);
   d3.json("/data/price_index_data.json", function(json) {
     data = json;
     choro.states.selectAll("path")
