@@ -1,6 +1,7 @@
 class StateRecordsController < ApplicationController
 
 	def get_record
+		puts "Hey!!!!!!"
 		state_record = { 
 			state: params[:state], 
 			indices: StateRecord.find_by(state: params[:state]).indices
