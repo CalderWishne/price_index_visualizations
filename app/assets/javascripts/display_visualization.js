@@ -6,8 +6,10 @@ $(function() {
 
   $('#year').on('change', function(event) {
   	event.preventDefault();
-  	// console.log($('#year').val());
-  	choropleth.colorStates($(this).val());
+  	var yearString = $(this).val();
+  	$.post('/indices/min_max', {year: yearString}, function(data){
+  		choropleth.colorStates(yearString, parseFloat(data[0]), parseFloat(data[1]));
+  	});  	
   });
 });
 
