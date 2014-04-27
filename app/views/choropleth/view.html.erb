@@ -1,3 +1,6 @@
 <div class="header">
 	<h3>Single-Family Housing Price Indices</h3>
+	<% year_options = (1991..2010).to_a.map { |year| [year.to_s, year.to_s] } %>
+	<%= label_tag(:year, 'Year: ') %>     
+	<%= select_tag(:year, options_for_select(year_options)) %>
 </div> 

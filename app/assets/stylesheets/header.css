@@ -5,9 +5,12 @@
 	padding: 12px;
 }
 
-h3 {
+.header h3 {
+	float: left;
+	display: inline-block;
 	margin:0;
 }
+
 
 svg {
 	margin: 0 auto;
