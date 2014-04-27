@@ -8,6 +8,16 @@
 </head>
 <body>
 	<%= yield %>
+
+	<%= form_tag("#", method: "get") do %>
+	  <%= label_tag(:year) %>
+	  <%= text_field_tag(:year) %>
+	  <%= submit_tag("Go") %>
+	<% end %>
+
+
+
+
 </body>
 </html>
 
