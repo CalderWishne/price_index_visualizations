@@ -11,6 +11,10 @@
 	width: 65%;*/
 }
 
+.nv-line {
+	fill: none;
+}
+
 /*#modal_line_chart {
 	float: left;
 }*/
