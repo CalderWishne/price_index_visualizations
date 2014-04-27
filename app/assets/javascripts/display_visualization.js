@@ -1,5 +1,12 @@
 $(function() {
+
   var choropleth = new Choropleth();
+  // var line_chart = new LineChart();
+
+  $('#modal_line_chart').easyModal({
+    overlay: 0.2,
+  });
+
 
   $('select').on('change', function(event) {
   	event.preventDefault();
@@ -11,8 +18,14 @@ $(function() {
   	});	
   });
 
-  $('.states').on('click', 'path', function() {
-  	alert($(this).attr('id'));
+  $('.states').on('click', 'path', function(event) {
+    event.preventDefault();
+    $('#modal_line_chart').trigger('openModal');
+    var stateName = $(this).attr('id');
+    console.log(stateName);
+  	$.post('/state_records', {state: stateName}, function(data) {
+      console.log(data);
+    });
   }); 
   // new LineChart("state");
 });

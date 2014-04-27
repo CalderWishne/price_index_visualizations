@@ -11,3 +11,7 @@
 	width: 65%;*/
 }
 
+#modal_line_chart svg {
+	margin: 0 auto;
+}
+
