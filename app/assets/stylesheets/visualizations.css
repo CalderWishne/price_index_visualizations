@@ -11,7 +11,24 @@
 	width: 65%;*/
 }
 
-#modal_line_chart svg {
-	margin: 0 auto;
+#modal_line_chart {
+	float: left;
 }
+
+/*.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: "red";
+  stroke-width: 1.5px;
+}*/
 
