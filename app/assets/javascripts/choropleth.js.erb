@@ -1,3 +1,5 @@
+var index_data;
+
 function Choropleth() {
   var choro = this;
 
@@ -27,7 +29,7 @@ Choropleth.prototype.colorStates = function(year, min_index, max_index, low_colo
     .domain([min_index, max_index])
     .range([low_color, high_color]);
   d3.json("/data/price_index_data.json", function(json) {
-    data = json;
+    index_data = json;
     choro.states.selectAll("path")
     .data(json)
     .attr("fill", function(d) { return gradient(d[year]); });

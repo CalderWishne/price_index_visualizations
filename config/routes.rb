@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root 'choropleth#view'
 
   post '/indices/min_max', to: 'indices#min_max'
+
+  post '/state_records', to: 'state_records#get_record'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

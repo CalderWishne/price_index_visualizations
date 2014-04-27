@@ -1,5 +1,15 @@
 $(function() {
+
   var choropleth = new Choropleth();
+  var lineChart;
+
+  $('#modal_line_chart').easyModal({
+    overlay: 0.2,
+    top: 0
+  });
+
+  $('#modal_line_chart').css('left', 0);//Don't know why I have to do this, but nothing else would move the damn thing!
+
 
   $('select').on('change', function(event) {
   	event.preventDefault();
@@ -11,8 +21,19 @@ $(function() {
   	});	
   });
 
-  $('.states').on('click', 'path', function() {
-  	alert($(this).attr('id'));
+  $('.states').on('click', 'path', function(event) {
+    $('#modal_line_chart').empty();
+    event.preventDefault();
+    var stateName = $(this).attr('id');
+    console.log(stateName);
+  	$.post('/state_records', {state: stateName}, function(data) {
+      if (typeof lineChart == 'undefined') {
+        linechart = new LineChart(data);
+      } else {
+        lineChart.data = data;
+      }
+    });
+    $('#modal_line_chart').trigger('openModal');
   }); 
   // new LineChart("state");
 });

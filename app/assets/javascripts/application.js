@@ -16,4 +16,5 @@
 //= require d3_source
 //= require nvd3_source
 //= require queue_source
+//= require jquery.easyModal
 //= require_tree .

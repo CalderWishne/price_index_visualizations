@@ -18,7 +18,7 @@ class PriceIndexCSVParser
 	               ) do |row|
 			puts row['State']
 			# byebug
-	      state_record = StateRecord.create(state: row['State'])
+	      state_record = StateRecord.create(state: row['State'].strip)
 	      years_arr.each do |year|
 	      	state_record.indices << Index.create(year: year.to_i, index: row[year].to_f)
 	      end
