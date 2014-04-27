@@ -1,8 +1,14 @@
-var data;
-var statePaths;
+// var data;
+// var statePaths;
 
 $(function() {
-  choropleth(2010);
+  var choropleth = new Choropleth();
+
+  $('form').on('submit', function(event) {
+  	event.preventDefault();
+  	console.log($('#year').val());
+  	choropleth.colorStates($('#year').val());
+  });
 });
 
 

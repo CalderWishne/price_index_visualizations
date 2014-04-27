@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require d3_source
+//= require queue_source
 //= require_tree .
