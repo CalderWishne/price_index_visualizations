@@ -1,11 +1,14 @@
 <div class="header">
-	<h3>Single-Family Housing Price Index</h3>
+	<h3>Single-Family Housing Price Index 1991 - 2010</h3>
 	<div class="options">
 		<% year_options = [['no selection', 'no selection']] + (1991..2010).to_a.map { |year| [year.to_s, year.to_s] } %>
 		<%= label_tag(:year, 'Year: ') %>     
 		<%= select_tag(:year, options_for_select(year_options)) %>
-		<% color_options = %w(red orange yellow green blue violet).map { |color| [color, color] } %>
-		<%= label_tag(:color, 'Color: ') %>
-		<%= select_tag(:color, options_for_select(color_options)) %>
+		<% color_options = %w(white red orange yellow green blue violet black).map { |color| [color, color] } %>
+		<%= label_tag(:color, 'Color Gradient (low index to high): ') %>
+		<%= select_tag(:low_color, options_for_select(color_options)) %>
+		 to 
+		<%= select_tag(:high_color, options_for_select(color_options)) %>
 	</div>
 </div> 
+<%= render 'commentary' %>
