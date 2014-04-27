@@ -36,15 +36,17 @@ function Choropleth(year) {
   
   });
 }
-Choropleth.prototype.colorStates = function(year, gradient) {
+Choropleth.prototype.colorStates = function(year, min_index, max_index) {
   var choro = this;
-  var gradient = typeof gradient !== 'undefined' ? gradient : choro.gradient
-  console.log(choro);
+  var gradient = d3.scale.linear()
+    .domain([min_index, max_index])
+    .range(["white", "blue"]);
+  // console.log(choro);
   d3.json("/data/price_index_data.json", function(json) {
     data = json;
     choro.states.selectAll("path")
     .data(json)
-    .attr("fill", function(d) { return choro.gradient(d[year]); });
+    .attr("fill", function(d) { return gradient(d[year]); });
   });
 }
 
