@@ -3,6 +3,16 @@ $(function() {
   var choropleth = new Choropleth();
   var lineChart;
 
+  var $loading = $('#loading_div').hide();
+
+  $(document)
+    .ajaxStart(function () {
+      $loading.show();
+    })
+    .ajaxStop(function () {
+      $loading.hide();
+    });
+
   $('#modal_line_chart').easyModal({
     overlay: 0.2,
     top: 0
