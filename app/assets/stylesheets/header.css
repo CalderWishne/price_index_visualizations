@@ -13,3 +13,21 @@
 .header p {
 	margin-right: 100px;
 }
+
+#low_color {
+	display: inline-block;
+}
+
+#high_color {
+	display: inline-block;
+}
+
+#explanation {
+	float: right;
+	margin-right: 100px;
+}
+
+#explanation button {
+	height: 50px;
+	width: 50px;
+}
