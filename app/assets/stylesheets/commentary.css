@@ -1,5 +1,13 @@
 .commentary {
+	clear: both;
+	background-color: steelblue;
+	color: white;
+	font-family: 'Helvetica';
 /*	display:inline-block;
 	width: 100%;
 	clear: both;*/
+}
+
+.commentary p {
+	margin: 0;
 }

@@ -1,0 +1,29 @@
+<%= button_to 'Home', root_path, method: 'get' %>
+<h3>Explanation</h3>
+	The price index dataset intrigued me because of the collapse of the housing bubble in 2008. Indeed, nearly every pop-up modal chart shows a sudden decline in the single-family housing price index around that time. I also thought that state-specific data would lend itself well to a choropleth, a D3 technique I'd been meaning to try. In the end, my two motivations conflicted a bit: the choropleth can show data for only one year at a time, masking any temporal influence. The pop-ups help, but I wish I had done more. See "In the Icebox" below. 
+
+	Despite these misgivings, I am quite proud of my work. The Chloropleth highlights any correlations between price index and location, bringing to light several interesting features. For the most part, housing price inflation was more exaggerated in the western states. I don't know why this is, but perhaps it bears investigating. 
+
+<h3>Challenges</h3>
+<p>
+	I didn't have to massage the price index data very much (unless you count converting CSV to JSON), but the geojson was another story. The states were in the wrong order, the data included puerto rico, and I had to try several different resolutions to achieve a decent loading-time without sacrificing detail.  
+</p>
+<p>
+	Prior to this project, my only D3 experience consisted of computing vertices on a hexagonal grid. Creating the choropleth required me to really engage with D3 paths and geojson. I had also never used the nvD3 library before, so I was thrilled when the charts started appearing as I had imagined them. 
+</p>
+<p>
+	Deploying to Heroku went smoothly at first, but I definitely had to troubleshoot. This project showed me the extreme usefulness of Heroku logs. 
+</p>
+
+<h3>In The Icebox</h3>
+<ul>
+	<li>One should be able to display data for different states and years simultaenously. I would like to collate the current pop-up charts in a reasonable way to more clearly illustrate time-dependence. </li>
+	<li>Index vs. Year modal charts should highlight the selected year. (Thought of this after self-imposed fetaure-freeze.)</li>
+	<li>The chart for a given state should compare that state's index for the selected year with the corresponding indices from adjacent states. (I tried to implement a many-to-many self-referential relation among the states and almost succeeded, but not quite. In an effort to keep the master branch clean and deployable, I implemented a feature-freeze earlier this evening. With more time, I would have investigated the possibility of modeling adjacencies with a graph database.)
+	<li>States with the highest and lowest index for a given year should be highlighted on the choropleth. (Thought of this after the feature-freeze.)</li>
+	<li>The year-selector feature should probably have a slider interface.</li>
+</ul>	
+
+
+
+

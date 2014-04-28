@@ -21,6 +21,14 @@ $(function() {
   $('#modal_line_chart').css('left', 0);//Don't know why I have to do this, but nothing else would move the damn thing!
 
 
+    var yearString = $('#year').val();
+    var low_color = $('#low_color').val();
+    var high_color = $('#high_color').val();
+    $.post('/indices/min_max', {year: yearString}, function(data){
+      choropleth.colorStates(yearString, parseFloat(data[0]), parseFloat(data[1]), low_color, high_color);
+    }); 
+
+
   $('select').on('change', function(event) {
   	event.preventDefault();
   	var yearString = $('#year').val();

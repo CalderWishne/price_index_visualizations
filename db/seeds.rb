@@ -28,3 +28,5 @@ class PriceIndexCSVParser
 
  parser = PriceIndexCSVParser.new("db/price_index_data.csv")
  parser.parse
+
+ 
