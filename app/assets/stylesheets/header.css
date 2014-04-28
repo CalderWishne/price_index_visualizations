@@ -1,13 +1,15 @@
 .header {
-	background-color: black;
+	background-color: steelblue;
 	color: white;
-	text-align: center;
 	padding: 12px;
+	font-family: 'Helvetica';
 }
 
 .header h3 {
-	float: left;
-	display: inline-block;
 	margin:0;
+	display: block;
 }
 
+.header p {
+	margin-right: 100px;
+}

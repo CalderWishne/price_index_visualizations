@@ -1,15 +1,20 @@
 <div class="header">
 	<h3>Single-Family Housing Price Index 1991 - 2010</h3>
+	<p>Choose a year and two (different) colors to load price index data. The first color represents the lowest index in the country for that year, and the second represents the highest. Click on any state to chart the price index data for that state for the entire period 1991 - 2010.</p>
 	<div class="options">
-		<% year_options = [['no selection', 'no selection']] + (1991..2010).to_a.map { |year| [year.to_s, year.to_s] } %>
+		<% year_options = (1991..2010).to_a.map { |year| [year.to_s, year.to_s] } %>
 		<%= label_tag(:year, 'Year: ') %>     
 		<%= select_tag(:year, options_for_select(year_options)) %>
 		<% color_options = %w(white red orange yellow green blue violet black).map { |color| [color, color] } %>
 		<%= label_tag(:color, 'Color Gradient (low index to high): ') %>
 		<%= select_tag(:low_color, options_for_select(color_options)) %>
 		 to 
+		 <% color_options << color_options.shift %>
 		<%= select_tag(:high_color, options_for_select(color_options)) %>
 	</div>
+</div>
+<div id="choropleth_wrapper">
+	
 </div> 
 <div id="loading_div"><img src="/img/spinner.gif"/></div>
 <div id="modal_line_chart"></div>

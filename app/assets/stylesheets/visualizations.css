@@ -5,19 +5,23 @@
 }
 
 #choropleth_container {
-	border: none;
+	border: 2px solid steelblue;
+  height: 500px;
 /*	display:inline-block;
 	float: left;
 	width: 65%;*/
+}
+
+.states {
+  cursor: pointer;
 }
 
 .nv-line {
 	fill: none;
 }
 
-/*#modal_line_chart {
-	float: left;
-}*/
+
+
 
 /*.axis path,
 .axis line {
