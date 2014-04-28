@@ -1,6 +1,6 @@
 <div class="header">
 	<h3>Single-Family Housing Price Index 1991 - 2010</h3>
-	<p>Choose a year and two (different) colors to load price index data. The first color represents the lowest index in the country for that year, and the second represents the highest. Click on any state for a chart of price index data over the entire period 1991 - 2010.</p>
+	<p>Choose a year and two (different) colors to load price index data. The first color represents the lowest index in the country for that year, and the second represents the highest. Click on any state for a chart of price index data over the entire period 1991 - 2010. (States should initially appear red. Refresh the page if all states are white.)</p>
 	<div class="options">
 		<% year_options = (1991..2010).to_a.map { |year| [year.to_s, year.to_s] } %>
 		<%= label_tag(:year, 'Year: ') %>     
